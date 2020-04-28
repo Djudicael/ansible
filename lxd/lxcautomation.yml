@@ -1,4 +1,4 @@
-- host: localhost
+- hosts: localhost
   connection: localhost
   tasks:
   -  name: Creating LXD container
