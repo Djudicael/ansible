@@ -1,6 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu:ubuntu18.04
 
-RUN apt-get update && apt-get install -y openssh-server vim python net-tools telnet
+RUN apt-get update && apt-get install -y software-properties-common openssh-server vim net-tools telnet
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update
+RUN apt-get install -y python3.7
 RUN mkdir /var/run/sshd
 RUN echo 'root:ansible' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config

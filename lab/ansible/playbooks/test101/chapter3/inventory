@@ -1,0 +1,26 @@
+#application server
+[app]
+lab_web_1
+lab_lb_1
+
+# Database server
+#[db]
+#lab_db_1
+
+#Group has all server
+#[multi:children]
+#app
+#db
+
+#Variable for all server
+#[multi:vars]
+#ansible_ssh_user=root
+#ansible_ssh_private_key_file=~/.vagrand.d/insecure_private_key
+
+#[multi:vars]
+#ansible_ssh_user=root
+#ansible_ssh_pass=ansible
+
+[all:vars]
+ansible_user=root
+ansible_ssh_pass=ansible
